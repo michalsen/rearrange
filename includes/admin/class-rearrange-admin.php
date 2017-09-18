@@ -25,7 +25,7 @@ class RearrangeAdmin {
           foreach ($posts as $key => $value) {
             if (preg_match('/(<img .*?>)/', $value->post_content)) {
             $content = str_get_html($value->post_content);
-
+              $newOrderImage = '';
             foreach($content->find('img') as $element) {
               $newOrderImage .= 'css="' . $element->attr['class'] . '"' ;
               $newOrderImage .= 'src="' . $element->attr['src'] . '"' ;
@@ -35,17 +35,17 @@ class RearrangeAdmin {
             }
             // $strippedContent = strip_tags($value->post_content, '<img>');
             $strippedContent = preg_replace("/<img[^>]+\>/i", " ", $value->post_content);
-            $cleanedstrippedContent = str_replace("&nbsp;", '', $strippedContent);
+            //$cleanedstrippedContent = str_replace("&nbsp;", '', $strippedContent);
 
             if ($_REQUEST['action'] == 'forward') {
               $newOrder = '<img ';
               $newOrder .= $newOrderImage;
               $newOrder .= '>';
-              $newOrder .= $cleanedstrippedContent;
+              $newOrder .= $strippedContent;
             }
 
             if ($_REQUEST['action'] == 'back') {
-              $newOrder = $cleanedstrippedContent;
+              $newOrder = $strippedContent;
               $newOrder .= '<img ';
               $newOrder .= $newOrderImage;
               $newOrder .= '>';
@@ -57,8 +57,7 @@ class RearrangeAdmin {
                 array(
                     'post_content' => $newOrder,
                 ),
-                array( 'ID' => $value->ID,
-                       'post_status' => 'publish')
+                array( 'ID' => $value->ID)
             );
 
           }
