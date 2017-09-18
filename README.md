@@ -13,3 +13,6 @@ Use at your own discretion as it will most likely destroy your data!
 Edit: Bi-direction! front and back
 
 To use, enable the plugin, then follow the link in the Tool menu.
+Here you will see your posts, their content and images.
+
+Front and back buttons drive the images to the front and back of the posts.
