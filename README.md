@@ -9,3 +9,5 @@ you want to play some fake data
 
 This does work in a limited test environment.
 Use at your own discretion as it will most likely destroy your data!
+
+Edit: Bi-direction! front and back

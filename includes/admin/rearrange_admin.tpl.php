@@ -18,7 +18,7 @@
 
       ?>
     <form action="/wp-admin/tools.php?page=rearrange" method=POST>
-      <!-- <a href="/wp-admin/tools.php?page=rearrange&action=forward">Put image in front</a> -->
+      <a href="/wp-admin/tools.php?page=rearrange&action=forward">Put image in front</a>
       <a href="/wp-admin/tools.php?page=rearrange&action=back">Put image in back</a>
     </form>
     </div>

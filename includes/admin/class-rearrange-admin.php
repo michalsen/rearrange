@@ -25,14 +25,15 @@ class RearrangeAdmin {
           foreach ($posts as $key => $value) {
             if (preg_match('/(<img .*?>)/', $value->post_content)) {
             $content = str_get_html($value->post_content);
-              $newOrderImage = '';
+
             foreach($content->find('img') as $element) {
-              $newOrderImage .= 'css="' . $element->attr['class'] . '"' ;
-              $newOrderImage .= 'src="' . $element->attr['src'] . '"' ;
-              $newOrderImage .= 'alt="' . $element->attr['alt'] . '"' ;
-              $newOrderImage .= 'width="' . $element->attr['width'] . '"' ;
-              $newOrderImage .= 'height="' . $element->attr['height'] . '"' ;
+              $newOrderImage  = 'css="' . $element->attr['class'] . '" ';
+              $newOrderImage .= 'src="' . $element->attr['src'] . '" ';
+              $newOrderImage .= 'alt="' . $element->attr['alt'] . '" ';
+              $newOrderImage .= 'width="' . $element->attr['width'] . '" ';
+              $newOrderImage .= 'height="' . $element->attr['height'] . '" ';
             }
+
             // $strippedContent = strip_tags($value->post_content, '<img>');
             $strippedContent = preg_replace("/<img[^>]+\>/i", " ", $value->post_content);
             //$cleanedstrippedContent = str_replace("&nbsp;", '', $strippedContent);
