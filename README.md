@@ -15,3 +15,5 @@ To use, enable the plugin, then follow the link in the Tool menu.
 Here you will see your posts, their content and images.
 
 Front and back buttons drive the images to the front and back of the posts.
+
+This tool currently only works on single images.  Multiple images will get dropped.
